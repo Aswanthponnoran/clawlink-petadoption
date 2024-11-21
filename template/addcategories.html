@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+ <h1 class="text-center mb-4">Add category</h1>
+        <div class="container">
+          <form method="POST" enctype="multipart/form-data" class="ms-3 justify-content:center bg-dark text-light p-4 rounded" style="width: 500px;">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <h4 class="text-white">Category Name</h4>
+                <label class="form-label"></label>
+                <input type="text" class="form-control" name="n" placeholder="Category Name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label"></label>
+                <input type="file" class="form-control" name="i" placeholder="File">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <input type="text" class="form-control" name="d" placeholder="Enter Description">
+            </div>
+
+            <div class="d-grid">
+                <input type="submit" class="btn btn-info text-light" value="Submit">
+            </div>
+          </form>
+        </div>
+{% endblock %}

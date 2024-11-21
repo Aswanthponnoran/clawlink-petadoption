@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <style>
+        /* Ensures no background image for the body */
+        body {
+            background-image: none !important;
+            background-color: #fff; /* Optional: Set a solid color instead */
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+<h1>Welcome to Login Page</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3 my-3 ms-3">
+        <div class="mb-3 ms-3 my-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="u" placeholder="Enter Username">
+        </div>
+        <div class="mb-3 ms-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="p" placeholder="Enter Password">
+        </div>
+        <div class="d-grid ms-3 mb-3">
+            <input type="submit" class="form-control btn btn-danger text-dark px-4" value="Submit">
+        </div>
+    </div>
+{% endblock %}
+</form>
+</body>
+</html>

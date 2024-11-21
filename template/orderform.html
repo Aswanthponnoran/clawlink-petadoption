@@ -1,0 +1,29 @@
+
+ {% extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+ <h2>Billing Details</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3 my-3 ms-3">
+        <div class="mb-3 ms-3 my-3">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" name="a" placeholder="Enter Address">
+        </div>
+        <div class="mb-3 ms-3">
+            <label class="form-label">Phone</label>
+            <input type="number" class="form-control" name="pn" placeholder="Enter Phone">
+        </div>
+        <div class="mb-3 ms-3">
+            <label class="form-label">Pin</label>
+            <input type="number" class="form-control" name="n" placeholder="Enter pin">
+        </div>
+        <div class="d-grid ms-3 mb-3">
+            <input type="submit" class="form-control btn btn-danger text-dark px-4" value="Submit">
+        </div>
+    </div>
+
+
+{%endblock%}

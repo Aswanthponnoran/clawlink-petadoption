@@ -1,0 +1,39 @@
+ {%extends  'base.html'%}
+{% load static %}
+ {% block content %}
+ <div>
+     <h1 class="ms-3">Product Details</h1>
+ </div>
+ <div class="card mb-3 ms-3" style="max-width: 1040px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{pro.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{pro.name}}</h5>
+        <p class="card-text">{{pro.desc}}</p>
+          <p class="card-text">{{pro.stock}}</p>
+            {% if user.is_superuser %}  <!-- if user is admin   -->
+               {% if pro.stock > 0 %}
+                 <p>Product in stock</p>
+                 <a class="btn bg-info  href-hover" href="{%url 'shop:addstock' pro.id%}">Add Stock</a>
+
+               {% else %}
+                 <p>Product Outof stock</p>
+                 <a class="btn bg-info  href-hover" href="{%url 'shop:addstock' pro.id%}">Add Stock</a>
+               {% endif %}
+
+            {% else %}  <!-- if User is Normal User   -->
+               {% if pro.stock > 0 %}
+                 <a class="btn-href-hover bg-info " href="{%url 'cart:addtocarts' pro.id%}">Add To Cart</a>
+               {% else %}
+                 <p>Product Outof stock</p>
+               {% endif %}
+            {% endif %}
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+ {% endblock %}
