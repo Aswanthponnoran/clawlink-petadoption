@@ -26,17 +26,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('index',views.index,name='nameindex'),
-    # path('base', views.base, name='base'),
-    # path('', views.category, name='category'),
-
     path('',include('shop.urls')),
     path('cart/', include('cart.urls')),
     path('search/', include('search.urls')),
-
-    # path('media/', include('media.urls')),
-    # path('search/', include('search.urls')),
-
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

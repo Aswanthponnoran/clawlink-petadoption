@@ -12,6 +12,7 @@ def base(request):
 def category(request):
     c=Category.objects.all()
     context={'cat':c}
+    print(context)
     return render(request,'category.html',context)
 
 

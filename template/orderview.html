@@ -6,23 +6,23 @@
 
         <h1 class="container">User is:{{user.username}}</h1>
 
-  <div class="card mb-3" style="max-width: 740px;">
+<div class="card mb-3" style="max-width: 740px;">
   <div class="row g-0">
 
     <div class="col-md-4">
 
      </div>
-    <div class="col-md-8">
-      <div class="card-body bg-dark text-light border border-1">
+      <div class=" my-5 col-md-8">
+      <div class="mx-5 my-5 card-body bg-dark text-light border border-1">
                   {% for i in orders%}
-       <img src="{{i.product.image.url}}" height="300px;" width="300px;">
+       <img class="mx-4" src="{{i.product.image.url}}" height="300px;" width="300px;">
 
-          <h5 class="card-title p-3">Card title: {{i.product.name}}</h5>
-          <h5 class="card-title">Product name:{{i.product.name}}</h5>
-          <h5 class="card-title">Price:{{i.product.price}}</h5>
-          <h5 class="card-title">No of items:{{i.no_of_items}}</h5>
-           <h5 class="card-title">Order Id:{{i.order_id}}</h5>
-          <h5 class="card-title">Order Id:{{i.delivery_status}}</h5>
+          <h5 class="mx-5  card-title p-3">Card title: {{i.product.name}}</h5>
+          <h5 class="mx-5  card-title">Product name:{{i.product.name}}</h5>
+          <h5 class="mx-5  card-title">Price:{{i.product.price}}</h5>
+          <h5 class="mx-5 card-title">No of items:{{i.no_of_items}}</h5>
+          <h5 class="mx-5 card-title">Order Id:{{i.order_id}}</h5>
+          <h5 class="mx-5 card-title">Order Id:{{i.delivery_status}}</h5>
 
          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                    {%endfor%}
