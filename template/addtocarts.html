@@ -5,11 +5,54 @@
  <div class="container mt-5 p-3 border-3 " style="margin-bottom:100px">
          <h2 class="text-danger fw-bold">Shopping cart</h2>
 
-     <div class="row">
+<!--     <div class="row">-->
 
-         <div class="col-7"><table class="table table-bordered border border-dark text-dark fw-bold">
+<!--         <div class="col-7"><table class="table table-bordered border border-dark text-dark fw-bold">-->
+<!--              <tr>-->
+<!--                 <th class="text-center" colspan="7">Cart Items</th>-->
+<!--              </tr>-->
+<!--                {% for i in cart %}-->
+<!--                   <tr>-->
+<!--                       <td><img src="{{i.product.image.url}}" height="100px" width="100px"></td>-->
+<!--                       <td>Product_name:{{i.product.name}}</td>-->
+<!--                       <td>unitprice:{{i.product.price}}</td>-->
+<!--                       <td>quantity{{i.quantity}}</td>-->
+<!--                       <td>subtotal:{{i.subtotal}}</td>-->
+<!--                       <td>-->
+<!--                           {% if i.product.stock > 0 %}-->
+<!--                             <a href="{%url 'cart:addtocarts' i.product.id %}"> <i class="fa-solid fa-square-plus"></i></a>-->
+<!--                             <a href="{%url 'cart:cart_remove' i.product.id %}"> <i class="fa-regular fa-square-minus"></i></a>-->
+<!--                             <a href="{%url 'cart:cart_delete' i.product.id %}"> <i class="fa-solid fa-trash"></i></a>-->
+<!--                           {% else %}-->
+<!--                             <a href="{%url 'cart:cart_remove' i.product.id %}"> <i class="fa-regular fa-square-minus"></i></a>-->
+<!--                             <a href="{%url 'cart:cart_delete' i.product.id %}"> <i class="fa-solid fa-trash"></i></a>-->
+<!--                           {% endif %}-->
+<!--                       </td>-->
+<!--                   </tr>-->
+<!--                {%endfor%}-->
+<!--             </table>-->
+<!--         </div>-->
+<!--         <div class="col-4">-->
+<!--             <table class="table table-bordered border border-dark">-->
+<!--               <tr>-->
+<!--                 <th class="text-center" colspan="4">checkout</th>-->
+<!--               </tr>-->
+<!--                 <td>Total Amount:{{total}}</td>-->
+<!--             </table>-->
+<!--             <div class="d-flex justify-content-between">-->
+<!--                 <a href="{% url 'cart:orderform'%}" class="btn btn-danger px-4">place order</a>-->
+<!--                 <a href="{% url 'shop:category'%}" class=" btn btn-danger">Continue Shopping</a>-->
+<!--             </div>-->
+<!--         </div>-->
+<!--     </div>-->
+<!-- </div>-->
+
+
+    <div class=" mb-2">
+      <div class=" ">
+          <table class="table table-bordered border border-dark text-dark fw-bold">
               <tr>
-                 <th class="text-center" colspan="7">Cart Items</th>
+                 <th class="text-center">Cart Items</th>
               </tr>
                 {% for i in cart %}
                    <tr>
@@ -31,20 +74,24 @@
                    </tr>
                 {%endfor%}
              </table>
-         </div>
-         <div class="col-4">
-             <table class="table table-bordered border border-dark">
+
+
+
+      </div>
+      <div class="col-5 bg-danger">
+          <table class="table table-bordered border border-dark">
                <tr>
                  <th class="text-center" colspan="4">checkout</th>
                </tr>
                  <td>Total Amount:{{total}}</td>
              </table>
-             <div class="d-flex justify-content-between">
-                 <a href="{% url 'cart:orderform'%}" class="btn btn-danger px-4">place order</a>
-                 <a href="{% url 'shop:category'%}" class=" btn btn-danger">Continue Shopping</a>
+             <div class="d-flex justify-content-between mx-2 ">
+                 <a href="{% url 'cart:orderform'%}" class="btn btn-danger px-3 ">place order</a>
+                 <a href="{% url 'shop:category'%}" class=" btn btn-danger px-3 ">Continue Shopping</a>
              </div>
          </div>
      </div>
  </div>
 
 {%endblock%}
+

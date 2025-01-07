@@ -4,6 +4,7 @@ from django.db.models import Q
 
 def search(request):
     p = None
+
     query = ""
     if request.method == "POST":
         query = request.POST.get('q', '').strip()  # Get and strip the query string
